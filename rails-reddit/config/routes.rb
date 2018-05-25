@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :logins
 
+  get 'logout', to: 'logins#destroy', as: 'logout'
+
   root 'posts#index'
 end
