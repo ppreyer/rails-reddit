@@ -1,0 +1,16 @@
+
+<%= form_with scope: :comment, local: true do |form| %>
+  <p>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    <%= form.hidden_field :post_id, value: @post.id %>
+
+    <%= current_user.username %>
+
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -4,21 +4,20 @@ class PostsController < ApplicationController
   end
 
   def new
-    # @post = Post.new
+    @post = Post.new
   end
 
   def create
-    # if current_user
+    if current_user
       @post = Post.new(post_params)
-      # if
-        @post.save
+      if @post.save
         redirect_to posts_path, notice: "Your post has been saved!"
-      # else 
-      #   render 'new', notice: "Try again!"
-      # end
-    # else
-    #   redirect_to logins_path, notice: "You must be logged in to post!"
-    # end
+      else 
+        render 'new', notice: "Try again!"
+      end
+    else
+      redirect_to logins_path, notice: "You must be logged in to post!"
+    end
   end
 
   def edit

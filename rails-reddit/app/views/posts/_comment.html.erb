@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% if @post.comments.present?%>
+    <% comments.each do |post| %>
+      <tr>
+        <td><%= post.comment.title %></td>
+        <td><%= post.comment.content %></td>
+        <td><%= link_to 'Edit', edit_comment_path(comment) %>
+        <td><%= link_to 'Destroy', comment_path(comment),
+                method: :delete,
+                data: { confirm: 'REEEEEEAAAALLY?' } %></td>
+      </tr>
+      <% end %>
+  <% end %>
+</table>
