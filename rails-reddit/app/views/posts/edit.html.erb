@@ -1,0 +1,19 @@
+<h1>Edit</h1>
+
+
+<%= form_with(model: @post,local: true) do |form| %>
+  <p>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
