@@ -298,3 +298,291 @@ Migrating to AddIdsToComment (20180525160122)
   ↳ bin/rails:9
   [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/bin/annotate:23
+Started GET "/" for 127.0.0.1 at 2018-05-25 12:16:17 -0400
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 472ms (Views: 464.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:16:23 -0400
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-05-25 12:16:31 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:16:33 -0400
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 62ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:23:38 -0400
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (24.6ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"logins"}, missing required keys: [:id]):
+    1: <%= form_tag login_url do %>
+    2: 
+    3:   <div class='form-group'>
+    4:     <%= label_tag :username %>
+  
+app/views/logins/new.html.erb:1:in `_app_views_logins_new_html_erb__4202741610402640622_70093377269500'
+app/controllers/logins_controller.rb:6:in `new'
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:24:13 -0400
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"logins"}, missing required keys: [:id]):
+    1: <%= form_tag login_path do %>
+    2: 
+    3:   <div class='form-group'>
+    4:     <%= label_tag :username %>
+  
+app/views/logins/new.html.erb:1:in `_app_views_logins_new_html_erb__4202741610402640622_70093338821760'
+app/controllers/logins_controller.rb:6:in `new'
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:24:21 -0400
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/config
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/images
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/stylesheets
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:15
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4090615527239105872_70093384719760'
+app/controllers/logins_controller.rb:6:in `new'
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:25:33 -0400
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/config
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/images
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/stylesheets
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:16
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4090615527239105872_70093340209380'
+app/controllers/logins_controller.rb:6:in `new'
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:26:10 -0400
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/config
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/images
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/stylesheets
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:16
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4090615527239105872_70093377760320'
+app/controllers/logins_controller.rb:6:in `new'
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:26:46 -0400
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/config
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/images
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/stylesheets
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:16
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4090615527239105872_70093377991300'
+app/controllers/logins_controller.rb:6:in `new'
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:27:15 -0400
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/config
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/images
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/stylesheets
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:16
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4090615527239105872_70093340434060'
+app/controllers/logins_controller.rb:6:in `new'
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:27:25 -0400
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/config
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/images
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/stylesheets
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:16
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4090615527239105872_70093378436400'
+app/controllers/logins_controller.rb:6:in `new'
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:27:29 -0400
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/config
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/images
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/app/assets/stylesheets
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /Users/parkerpreyer/Momentum/Rails/rails-reddit/rails-reddit/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:16
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__4090615527239105872_70093378576660'
+app/controllers/logins_controller.rb:6:in `new'
+Started GET "/logins/new" for 127.0.0.1 at 2018-05-25 12:27:52 -0400
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/parkerpreyer/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by LoginsController#new as HTML
+  Rendering logins/new.html.erb within layouts/application
+  Rendered logins/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 5538ms (Views: 5527.6ms | ActiveRecord: 0.0ms)
+
+
