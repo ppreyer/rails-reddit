@@ -11,7 +11,7 @@ class LoginsController < ApplicationController
     if user and user.authenticate(params[:password])
       # Setting a session to specific user.id
       session[:user_id] = user.id
-      redirect_to root_url, notice: "You have successfully logged in!"
+      redirect_to posts_path, notice: "You have successfully logged in!"
     else
       flash.now[:error] = 'Invalid email/password combination'
       render 'new'
