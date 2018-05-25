@@ -10,8 +10,8 @@
   <%= @post.content %>
 </p>
 
-<%= render "newcomment" %>
+<h2>Leave a Comment</h2>
+<%= render 'comments/newcomment', :comment => @comment %>
 
-<%= render "comment" %>
-
-<%= render "nav"%>
+<h2>Comments</h2>
+<%= render @post.comments %>

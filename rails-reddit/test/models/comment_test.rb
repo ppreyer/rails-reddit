@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #  user_id    :integer
 #  post_id    :integer
+#  commenter  :string
 #
 
 require 'test_helper'

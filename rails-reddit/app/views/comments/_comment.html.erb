@@ -1,0 +1,7 @@
+
+<% if comment.content %>
+  <p>
+    <%= comment.content %> | by <%= comment.commenter %> 
+    <%= link_to 'Delete Comment',  post_comment_path(comment.post.id, comment),   method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
