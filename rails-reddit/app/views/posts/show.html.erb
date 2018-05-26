@@ -9,6 +9,8 @@
   <strong>Text:</strong>
   <%= @post.content %>
 </p>
+<%= pluralize(@post.votes.count, "vote") %>
+<%= button_to '+1', upvote_post_path(@post), method: :post %>
 
 <h2>Leave a Comment</h2>
 <%= render 'comments/newcomment', :comment => @comment %>
