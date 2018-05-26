@@ -3,5 +3,6 @@
   <p>
     <%= comment.content %> | by <%= comment.commenter %> 
     <%= link_to 'Delete Comment',  post_comment_path(comment.post.id, comment),   method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Edit Comment', edit_post_comment_path(comment.post.id, comment) %>
   </p>
 <% end %>
