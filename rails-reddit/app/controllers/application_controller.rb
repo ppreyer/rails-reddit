@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
      end
    end
 
-   def authorize
+  def authorize
     redirect_to new_login_path, alert: "You must be logged in to post!" unless current_user
   end
 

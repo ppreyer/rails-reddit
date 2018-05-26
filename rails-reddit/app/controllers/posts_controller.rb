@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authorize, only: [:new, :create, :edit, :save, :destroy]
+  before_action :authorize, only: [:new, :create, :edit, :save, :destroy, :upvote]
   
   def index
     @posts = Post.all.sort_by{ |post| post.votes.size }.reverse
