@@ -20,10 +20,6 @@
       <td><%= link_to post.title, post_path(post) %></td>
       <td><%= post.content %></td>
       <td><%= post.created_at%></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %>
-      <td><%= link_to 'Destroy', post_path(post),
-              method: :delete,
-              data: { confirm: 'REEEEEEAAAALLY?' } %></td>
     </tr>
   <% end %>
 </table>
