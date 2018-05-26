@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :save, :destroy]
   
   def index
-    @posts = Post.all
+    @posts = Post.all.sort_by{ |post| post.votes.size }.reverse
   end
 
   def new
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   def upvote
     @post = Post.find(params[:id])
     @post.votes.create
-    redirect_to @post
+    redirect_to posts_path
   end
 
 
