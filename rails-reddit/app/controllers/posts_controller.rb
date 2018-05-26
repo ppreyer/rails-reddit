@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authorize, only: [:new, :create, :edit, :save, :destroy]
+  
   def index
     @posts = Post.all
   end

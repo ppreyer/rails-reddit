@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
        return @user
      end
    end
+
+   def authorize
+    redirect_to new_login_path, alert: "You must be logged in to post!" unless current_user
+  end
+
 end

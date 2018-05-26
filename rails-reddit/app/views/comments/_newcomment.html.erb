@@ -1,9 +1,11 @@
 <%= form_for ([@post, @post.comments.build]) do |form| %>
   <%= form.hidden_field :post_id %>
   <p>
-  <%= form.hidden_field :commenter, value: current_user.username %>
-  <%= form.hidden_field :user_id, value: current_user.id %>
-  </p>
+  <% if current_user %>
+    <%= form.hidden_field :commenter, value: current_user.username %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    </p>
+  <% end %>
   <p>
     <%= form.label :content %><br>
     <%= form.text_area :content %>
