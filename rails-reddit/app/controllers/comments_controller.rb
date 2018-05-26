@@ -19,22 +19,29 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
   end
 
-   def update
+  def update
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-
-    if @comment.update(comment_params)
-      redirect_to post_path(@post)
+    if user_allowed
+      if @comment.update(comment_params)
+        redirect_to post_path(@post)
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      redirect_to posts_path, notice: "You can only edit your own comment!"
     end
   end
     
   def destroy
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
-    @comment.destroy
-    redirect_to post_path(@post)
+      @post = Post.find(params[:post_id])
+      @comment = @post.comments.find(params[:id])
+      if user_allowed
+        @comment.destroy
+        redirect_to post_path(@post)
+      else 
+        redirect_to posts_path, notice: "You can only delete your own comment!"
+      end
   end
   
   private
