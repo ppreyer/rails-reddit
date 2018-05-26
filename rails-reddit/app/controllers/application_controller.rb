@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
     current_user && (current_user.id == @comment.user_id)
   end
 
+  def user_allowed_post
+    current_user && (current_user.id == @post.user_id)
+  end
+
 end

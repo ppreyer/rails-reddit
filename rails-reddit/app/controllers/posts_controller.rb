@@ -32,18 +32,25 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-
-    if @post.update(post_params)
-      redirect_to @post
-    else
-      render 'edit'
+    if user_allowed_post
+      if @post.update(post_params)
+        redirect_to @post
+      else
+        render 'edit'
+      end
+    else 
+      redirect_to posts_path(@post), notice: "You can only edit your own post!"
     end
   end
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
+    if user_allowed_post
+      @post.destroy
+      redirect_to posts_path
+    else
+      redirect_to posts_path(@post), notice: "You can only delete your own post!"
+    end
   end
 
   def upvote
