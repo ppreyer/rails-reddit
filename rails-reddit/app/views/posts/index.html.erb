@@ -10,7 +10,7 @@
   
     <% @posts.each do |post| %>
       <tr>
-        <td><%= pluralize(post.votes.count, "vote") %></td>
+        <td><%= pluralize(post.votes.count, "vote") %> | <%= pluralize(post.downvotes.count, "downvote") %></td>
         <td>
           <div><%= link_to post.title, post_path(post) %></div>
           <div><%= post.content %></div>
