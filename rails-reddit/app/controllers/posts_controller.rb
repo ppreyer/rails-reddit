@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authorize, only: [:new, :create, :edit, :save, :destroy, :upvote]
+  before_action :authorize, only: [:new, :create, :edit, :save, :destroy, :upvote, :downvote]
   
   def index
     @posts = Post.all.sort_by{ |post| post.votes.size }.reverse
@@ -56,9 +56,14 @@ class PostsController < ApplicationController
   def upvote
     @post = Post.find(params[:id])
     @post.votes.create
-    redirect_to posts_path
+    redirect_to posts_path(@post)
   end
 
+  def downvote
+    @post = Post.find(params[:id])
+    @post.downvotes.create
+    redirect_to posts_path
+  end
 
   private
   def post_params
