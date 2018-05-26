@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
     redirect_to new_login_path, alert: "You must be logged in to post!" unless current_user
   end
 
+  def user_allowed
+    current_user && (current_user.id == @comment.user_id)
+  end
+
 end
