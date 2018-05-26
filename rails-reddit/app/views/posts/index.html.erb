@@ -5,7 +5,6 @@
     <tr>
       <th></th>
       <th><h3>Check out all this 100% Grade A User Generated Content!</h3></th>
-      <th>Posted</th>
       <th></th>
     </tr>
   
@@ -13,9 +12,9 @@
       <tr>
         <td><%= pluralize(post.votes.count, "vote") %></td>
         <td>
-          <p><%= link_to post.title, post_path(post) %></p>
-          <p><%= post.content %></p>
-          <p><%= post.created_at%></p>
+          <div><%= link_to post.title, post_path(post) %></div>
+          <div><%= post.content %></div>
+          <div><%= post.created_at%></div>
         </td>
       </tr>
     <% end %>
