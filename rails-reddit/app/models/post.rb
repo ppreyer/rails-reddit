@@ -15,5 +15,4 @@ class Post < ApplicationRecord
   has_many :votes
   has_many :downvotes
   belongs_to :user
-
 end

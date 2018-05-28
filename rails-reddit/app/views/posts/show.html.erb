@@ -8,10 +8,13 @@
 <p>
   <%= @post.content %>
 </p>
-<div>
-  <%= pluralize(@post.votes.count, "vote") %>
-  <%= button_to '+1', upvote_post_path(@post), method: :post %>
-</div>
+<%= form_for :post, url: upvote_post_path(@post), local: true do |form| %>
+  <div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    <%= pluralize(@post.votes.count, "vote") %>
+    <%= button_to '+1' %>
+  </div>
+<% end %>
 <div>
   <%= pluralize(@post.downvotes.count, "downvote") %>
   <%= button_to '-1', downvote_post_path(@post), method: :post %>
