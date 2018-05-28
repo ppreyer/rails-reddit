@@ -55,8 +55,8 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
-    @post.votes.create
-    redirect_to posts_path(@post)
+    @post.votes.create!
+    redirect_to posts_path
   end
 
   def downvote

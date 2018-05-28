@@ -1,2 +1,5 @@
-<%= @user.id %>
-<%= @user.username %>
+<h1>My Favorite Posts </h1>
+
+<% current_user.posts.each do |post| %>
+  <%= post.title %>
+<% end %>
