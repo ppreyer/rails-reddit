@@ -1,24 +1,12 @@
-<h1>Eatit</h1>
-
-<div class="table-responsive">
-  <table class= "table table-hover">
-    <tr>
-      <th></th>
-      <th><h3>Check out all this 100% Grade A User Generated Content!</h3></th>
-      <th></th>
-    </tr>
-  
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= pluralize(post.votes.count, "vote") %> | <%= pluralize(post.downvotes.count, "downvote") %></td>
-        <td>
-          <div><%= link_to post.title, post_path(post) %></div>
-          <div><%= post.content %></div>
-          <div><%= post.created_at%></div>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-</div>
-
-<%= link_to "New Post", new_post_path%>
+<h1>Eatit - A reddit for meats</h1>
+<%= link_to "Create a New Post", new_post_path%>
+<% @posts.each do |post| %>
+  <div class="card" style="width: 90%;">
+    <div class="card-body">
+      <%= pluralize(post.votes.count, "vote") %> | <%= pluralize(post.downvotes.count, "downvote") %>
+      <h5 class="card-title"><%= link_to post.title, post_path(post)%> | Created at: <%= post.created_at %></h5>
+      <p class="card-text"><%= post.content %></p>
+      <%= link_to "Read Full Post", post_path(post)%>
+    </div>
+  </div>
+<% end %>
