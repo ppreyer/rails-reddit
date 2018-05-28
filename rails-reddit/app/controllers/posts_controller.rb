@@ -19,7 +19,7 @@ class PostsController < ApplicationController
         render 'new', notice: "Try again!"
       end
     else
-      redirect_to logins_path, notice: "You must be logged in to post!"
+      redirect_to logins_path, alert: "You must be logged in to post!"
     end
   end
 
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
         render 'edit'
       end
     else 
-      redirect_to posts_path(@post), notice: "You can only edit your own post!"
+      redirect_to posts_path(@post), alert: "You can only edit your own post!"
     end
   end
 
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
       @post.destroy
       redirect_to posts_path
     else
-      redirect_to posts_path(@post), notice: "You can only delete your own post!"
+      redirect_to posts_path(@post), alert: "You can only delete your own post!"
     end
   end
 

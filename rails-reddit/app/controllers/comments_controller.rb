@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
         render 'edit'
       end
     else
-      redirect_to posts_path, notice: "You can only edit your own comment!"
+      redirect_to posts_path, alert: "You can only edit your own comment!"
     end
   end
     
@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
         @comment.destroy
         redirect_to post_path(@post)
       else 
-        redirect_to posts_path, notice: "You can only delete your own comment!"
+        redirect_to posts_path, alert: "You can only delete your own comment!"
       end
   end
   
