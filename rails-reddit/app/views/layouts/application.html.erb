@@ -17,6 +17,7 @@
         <%= link_to "Log out", logout_url, :class => "btn btn-outline-info" %>
         <%= link_to "Edit Profile", edit_user_path(current_user.id), :class => "btn btn-outline-info" %>
         <%= link_to "My Posts", user_path(current_user.id), :class => "btn btn-outline-info" %>
+        <%= link_to "Home", posts_path, :class => "btn btn-outline-info" %>
       </div>
     <% else %>
       <div style="text-align: right">
