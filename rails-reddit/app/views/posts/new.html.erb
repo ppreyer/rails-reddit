@@ -2,19 +2,19 @@
 
 <% if current_user %>
   <%= form_with scope: :post, url: posts_path, local: true do |form| %>
-    <p>
+    <p class="col-md-4">
       <%= form.hidden_field :user_id, value: current_user.id %>
       <%= form.label :title %><br>
-      <%= form.text_field :title %>
+      <%= form.text_field :title, :class => "form-control" %>
     </p>
   
-    <p>
+    <p class="col-md-4">
       <%= form.label :content %><br>
-      <%= form.text_area :content %>
+      <%= form.text_area :content, :class => "form-control content" %>
     </p>
   
     <p>
-      <%= form.submit %>
+    <%= button_to 'Save Post', posts_path, :class => "btn btn-outline-primary" %>
     </p>
   <% end %>
 <% end %>

@@ -6,10 +6,10 @@
     <%= form.hidden_field :user_id, value: current_user.id %>
   <% end %>
   </div>
-  <div>
-    <%= form.text_area :content %>
+  <div class="col-md-4">
+    <%= form.text_area :content, :class => "form-control content" %>
   </div>
   <div>
-    <%= form.submit %>
+  <%= button_to 'Leave a Meaty Hot Take', post_path(@post), :class => "btn btn-outline-primary" %>
   </div>
 <% end %>

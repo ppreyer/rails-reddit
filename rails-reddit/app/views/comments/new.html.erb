@@ -1,0 +1,17 @@
+<% if @post.comments.empty? %>
+  <%= form_for ([@post, @post.comments.build]) do |form| %>
+    <%= form.hidden_field :post_id %>
+    <div>
+    <% if current_user %>
+      <%= form.hidden_field :commenter, value: current_user.username %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    <% end %>
+    </div>
+    <div>
+      <%= form.text_area :content %>
+    </div>
+    <div>
+      <%= link_to 'Leave a Meaty Hot Take', post_path(@post), :class => "btn btn-" %>
+    </div>
+  <% end %>
+<% end %>

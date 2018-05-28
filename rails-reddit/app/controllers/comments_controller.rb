@@ -1,7 +1,9 @@
 class CommentsController < ApplicationController
+  skip_before_action :verify_authenticity_token  
   before_action :authorize, only: [:new, :create, :edit, :save, :destroy]
   
   def new
+    @post = Post.find(params[:post_id])
     @comment = Comment.new
   end
 

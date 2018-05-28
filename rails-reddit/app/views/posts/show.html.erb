@@ -2,27 +2,24 @@
   <div class="col-md-12">
     <div class="banner">
     </div>
-      <h1 class="app-title"><%= @post.title %> <%= link_to "Leave a Comment", new_post_path, :class => "btn btn-outline-success" %> <%= link_to "Edit Post", new_post_path, :class => "btn btn-outline-primary" %> <%= link_to 'Delete Post', post_path(@post),
+      <h1 class="app-title"><%= @post.title %> <%= link_to "Edit Post", edit_post_path, :class => "btn btn-outline-primary" %> <%= link_to 'Delete Post', post_path(@post),
       method: :delete, :class => "btn btn-outline-danger" %></h1>
       <div class="card" style="width: 90%;">
           <div class="card-body">
             <%= pluralize(@post.votes.count, "vote") %>
             <%= pluralize(@post.downvotes.count, "downvote") %>
             <p class="card-text"><%= @post.content %></p>
-            <%= button_to '+1', upvote_post_path(@post), method: :post, :class => "btn btn-outline-success" %>
-            <%= button_to '+1', downvote_post_path(@post), method: :post, :class => "vote btn btn-outline-danger" %>
+            <ul class="list-inline">
+              <li><%= button_to '+1', upvote_post_path(@post), method: :post, :class => "btn btn-outline-success" %></li>
+              <li><%= button_to '+1', downvote_post_path(@post), method: :post, :class => "vote btn btn-outline-danger" %></li>
+            </ul>
           </div>
+          <%= render @post.comments %>
       </div>
   </div>
 </div>
 
-
-</p>
-
-<hr>
 <h3>Leave a Comment</h3>
 <%= render 'comments/newcomment', :comment => @comment %>
-<hr>
-<h3>Comments</h3>
-<%= render @post.comments %>
+
 
