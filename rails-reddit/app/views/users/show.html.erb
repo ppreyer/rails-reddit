@@ -1,8 +1,12 @@
-<h1>My Created Posts </h1>
-
 <% if @posts.empty? %>
   <h3>You need to write some posts! </h3>
 <% else %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="banner">
+    </div>
+    <h1>My Created Posts </h1>
+  </div>
   <div class="row">
   <% @posts.each do |post| %>
     <div class="col-md-12">

@@ -17,9 +17,9 @@
           <%= render @post.comments %>
       </div>
   </div>
+  <h3>Leave a Comment</h3>
+  <%= render 'comments/newcomment', :comment => @comment %>
 </div>
 
-<h3>Leave a Comment</h3>
-<%= render 'comments/newcomment', :comment => @comment %>
 
 
