@@ -8,18 +8,19 @@
 <p>
   <%= @post.content %>
 </p>
-<div>
-  <%= pluralize(@post.votes.count, "vote") %>
-  <%= button_to '+1', upvote_post_path(@post), method: :post %>
-</div>
-<div>
-  <%= pluralize(@post.downvotes.count, "downvote") %>
-  <%= button_to '-1', downvote_post_path(@post), method: :post %>
-</div>
+<hr>
 
+<ul class="list-inline">
+  <li class="list-inline-item"><%= pluralize(@post.votes.count, "vote") %></li>
+  <li class="list-inline-item"><%= button_to '+1', upvote_post_path(@post), method: :post %></li>
+  <li class="list-inline-item"><%= pluralize(@post.downvotes.count, "downvote") %></li>
+  <li class="list-inline-item"><%= button_to '-1', downvote_post_path(@post), method: :post %></li>
+</ul>
+
+<hr>
 <h3>Leave a Comment</h3>
 <%= render 'comments/newcomment', :comment => @comment %>
-
+<hr>
 <h3>Comments</h3>
 <%= render @post.comments %>
 
