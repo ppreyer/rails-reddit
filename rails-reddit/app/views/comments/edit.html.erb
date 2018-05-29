@@ -4,11 +4,11 @@
   <%= form.hidden_field :commenter, value: current_user.username %>
   <%= form.hidden_field :user_id, value: current_user.id %>
   </p>
-  <p>
+  <p class="col-md-4">
     <%= form.label :content %><br>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, :class => "form-label content" %>
   </p>
   <p>
-    <%= form.submit "Edit Comment" %>
+    <%= button_to 'Update Comment', posts_path, :class => "btn btn-outline-primary" %>
   </p>
 <% end %>
