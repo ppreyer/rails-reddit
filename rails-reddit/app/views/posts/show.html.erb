@@ -9,10 +9,8 @@
             <%= pluralize(@post.votes.count, "vote") %>
             <%= pluralize(@post.downvotes.count, "downvote") %>
             <p class="card-text"><%= @post.content %></p>
-            <ul class="list-inline">
-              <li><%= button_to '+1', upvote_post_path(@post), method: :post, :class => "btn btn-outline-success" %></li>
-              <li><%= button_to '+1', downvote_post_path(@post), method: :post, :class => "vote btn btn-outline-danger" %></li>
-            </ul>
+            <%= link_to '+1', upvote_post_path(@post), method: :post, :class => "btn btn-outline-success" %></li>
+            <%= link_to '+1', downvote_post_path(@post), method: :post, :class => "btn btn-outline-danger" %></li>
           </div>
           <%= render @post.comments %>
       </div>
