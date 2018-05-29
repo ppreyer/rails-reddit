@@ -6,7 +6,7 @@
       method: :delete, :class => "btn btn-outline-danger" %></h1>
       <div class="card" style="width: 90%;">
           <div class="card-body">
-            <%= pluralize(@post.votes.count, "vote") %>
+            <%= pluralize(@post.votes.count, "vote") %> |
             <%= pluralize(@post.downvotes.count, "downvote") %>
             <p class="card-text"><%= @post.content %></p>
             <%= link_to '+1', upvote_post_path(@post), method: :post, :class => "btn btn-outline-success" %></li>
